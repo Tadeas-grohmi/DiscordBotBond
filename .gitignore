@@ -2,3 +2,5 @@
 /__pycache__
 /venv
 /utils/info
+/cogs/__pycache__
+/utils/__pycache__
