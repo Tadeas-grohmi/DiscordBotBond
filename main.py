@@ -37,16 +37,6 @@ async def on_ready():
     time.sleep(2)
     print('Jsem zapnut a připojen za {0.user}'.format(bot))
 
-async def status_zmena():
-    await bot.wait_until_ready()
-    statuses = ["Použij !! nebo $", f"Jsem na {len(bot.guilds)} serverech", f"Mám {len(bot.users)} uživatelů"]
-    #urls = ["https://www.youtube.com/watch?v=blN4xe3y430&t=29s", "https://www.youtube.com/watch?v=s8umOD72H0E", "https://www.youtube.com/watch?v=RV6aLIQgmYg", "https://www.youtube.com/watch?v=hQDv_y1BWl8&t=10s"]
-    while not bot.is_closed():
-        status = random.choice(statuses)
-        await bot.change_presence(activity=discord.Streaming(name=status, url="https://www.youtube.com/watch?v=RV6aLIQgmYg"))
-        await asyncio.sleep(10)
-bot.loop.create_task(status_zmena())
-
 @bot.command()
 async def ping(ctx):
     await ctx.send(f'Ping je {round(bot.latency * 1000)}ms')

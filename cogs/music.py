@@ -224,15 +224,18 @@ class Test_Music(commands.Cog):
 
     @commands.command(aliases=["hraj", "Hraj", "p", "P", "h", "H"])
     async def play(self, ctx, *, search: str):
-        await ctx.trigger_typing()
-        vc = ctx.voice_client
-        if not vc:
-            await ctx.invoke(self.napoj)
-        player = self.get_player(ctx)
-        # If download is False, source will be a dict which will be used later to regather the stream.
-        # If download is True, source will be a discord.FFmpegPCMAudio with a VolumeTransformer.
-        source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop, download=False)
-        await player.queue.put(source)
+        try:
+            await ctx.trigger_typing()
+            vc = ctx.voice_client
+            if not vc:
+                await ctx.invoke(self.napoj)
+            player = self.get_player(ctx)
+            # If download is False, source will be a dict which will be used later to regather the stream.
+            # If download is True, source will be a discord.FFmpegPCMAudio with a VolumeTransformer.
+            source = await YTDLSource.create_source(ctx, search, loop=self.bot.loop, download=False)
+            await player.queue.put(source)
+        except:
+            await ctx.send("Video je 18+ a tudíž ho nemůžu pustit :(") 
 
     @commands.command(aliases=["Pauza"])
     async def pauza(self, ctx):
