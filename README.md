@@ -1,10 +1,13 @@
-# DiscordBotBond
-
-<p algin= center>
-<img src="https://img.shields.io/badge/made%20with-python-blue.svg" alt="made with python">
+<p align="center">
+ <h1 align="center">DiscordBotBond</h1>
 </p>
 
-Open-source discord bot
+
+<p align="center">
+  <a href="https://www.python.org/">
+    <img src="https://forthebadge.com/images/badges/made-with-python.svg" alt="made with python" >
+  </a>
+</p>
 
 Pozvánka zde: https://discord.com/api/oauth2/authorize?client_id=838345647731114014&permissions=8&scope=bot
 
