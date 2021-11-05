@@ -1,6 +1,8 @@
 # DiscordBotBond
 
+<p algin= center>
 <img src="https://img.shields.io/badge/made%20with-python-blue.svg" alt="made with python">
+</p>
 
 Open-source discord bot
 
